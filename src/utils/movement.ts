@@ -1,17 +1,14 @@
-const VARIANCE_RATIO = 0.5
-const BACKWARD_CHANCE = 0.15
-const BACKWARD_RATIO = 0.3
-const BURST_CHANCE = 0.05
-const BURST_MULTIPLIER = 2.5
-const CATCHUP_FACTOR = 0.15
+const VARIANCE_RATIO = 1.2
+const BACKWARD_CHANCE = 0.12
+const BACKWARD_RATIO = 0.5
+const BURST_CHANCE = 0.08
+const BURST_MULTIPLIER = 3.5
+const SLOWDOWN_CHANCE = 0.06
+const SLOWDOWN_MULTIPLIER = 0.2
+const CATCHUP_FACTOR = 0.2
 
 const TICK_INTERVAL = 50
 
-/**
- * Calculate base speed so that a duck moving at base speed
- * would reach ~90% of the track right around when the timer expires.
- * The remaining 10% comes from variance/bursts, creating a photo-finish feel.
- */
 export function getBaseSpeed(durationSeconds: number): number {
   const totalTicks = (durationSeconds * 1000) / TICK_INTERVAL
   return 90 / totalTicks
@@ -35,9 +32,14 @@ export function calculateMovement(
     speed = Math.abs(speed) * BURST_MULTIPLIER
   }
 
+  // Sudden slowdown
+  if (Math.random() < SLOWDOWN_CHANCE) {
+    speed = Math.abs(speed) * SLOWDOWN_MULTIPLIER
+  }
+
   // Catch-up bonus for trailing ducks
   const gap = leaderPosition - currentPosition
-  if (gap > 10) {
+  if (gap > 8) {
     speed += gap * CATCHUP_FACTOR * baseSpeed
   }
 

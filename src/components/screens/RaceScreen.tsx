@@ -44,7 +44,7 @@ export default function RaceScreen() {
       </div>
 
       {/* Race Track */}
-      <div className="flex-1 bg-blue-400/20 backdrop-blur-sm rounded-2xl p-4 overflow-hidden">
+      <div className="flex-1 rounded-2xl overflow-hidden shadow-2xl">
         <RaceTrack />
       </div>
 
