@@ -86,7 +86,7 @@ export default function SetupScreen() {
           <input
             type="range"
             min={1}
-            max={1800}
+            max={300}
             step={1}
             value={raceDuration}
             onChange={(e) => setRaceDuration(Number(e.target.value))}
@@ -94,7 +94,7 @@ export default function SetupScreen() {
           />
           <div className="flex justify-between text-white/50 text-sm mt-1">
             <span>1s</span>
-            <span>30m</span>
+            <span>5m</span>
           </div>
         </div>
 

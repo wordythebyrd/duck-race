@@ -162,11 +162,13 @@ export default function RaceTrack() {
 
               {/* Duck */}
               <div
-                className="absolute"
+                className="absolute duck-bob"
                 style={{
                   left: `${duck.position * 0.96 + 1}%`,
                   top: '50%',
                   transform: 'translateY(-55%)',
+                  animationDelay: `${(duck.id * 0.3) % 2}s`,
+                  animationDuration: `${1.2 + (duck.id % 5) * 0.2}s`,
                 }}
               >
                 <Duck duck={duck} size={duckSize} />

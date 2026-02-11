@@ -75,3 +75,20 @@ body {
     background-position: -300px 0;
   }
 }
+
+/* Duck bobbing animation */
+.duck-bob {
+  animation: duck-bob ease-in-out infinite;
+}
+
+@keyframes duck-bob {
+  0%, 100% {
+    transform: translateY(-55%);
+  }
+  30% {
+    transform: translateY(-60%) rotate(2deg);
+  }
+  70% {
+    transform: translateY(-50%) rotate(-1.5deg);
+  }
+}
