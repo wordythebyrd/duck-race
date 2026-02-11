@@ -79,7 +79,7 @@ export default function RaceTrack() {
             width: `${TRACK_WIDTH_MULTIPLIER * 100}%`,
             height: trackHeight,
             transform: `translateX(-${cameraOffset * 100}%)`,
-            transition: 'transform 80ms linear',
+            transition: 'transform 150ms ease-out',
           }}
         >
           {/* Finish line */}
@@ -147,13 +147,14 @@ export default function RaceTrack() {
 
               {/* Duck name label - follows duck */}
               <div
-                className="absolute text-white font-semibold z-10 truncate text-shadow"
+                className="absolute text-white font-semibold z-10 truncate"
                 style={{
                   left: `${duck.position * 0.96 + 1}%`,
                   bottom: '2px',
                   fontSize: duckSize > 50 ? '12px' : '10px',
                   maxWidth: '140px',
                   textShadow: '0 1px 3px rgba(0,0,0,0.6)',
+                  transition: 'left 120ms linear',
                 }}
                 title={duck.name}
               >
@@ -167,6 +168,7 @@ export default function RaceTrack() {
                   left: `${duck.position * 0.96 + 1}%`,
                   top: '50%',
                   transform: 'translateY(-55%)',
+                  transition: 'left 120ms linear',
                   animationDelay: `${(duck.id * 0.3) % 2}s`,
                   animationDuration: `${1.2 + (duck.id % 5) * 0.2}s`,
                 }}

@@ -16,7 +16,7 @@ export default function WinnerPodium({ winner }: WinnerPodiumProps) {
     >
       {/* Trophy */}
       <motion.div
-        className="text-6xl mb-4"
+        className="text-7xl mb-10"
         initial={{ scale: 0, rotate: -20 }}
         animate={{ scale: 1, rotate: 0 }}
         transition={{ delay: 1.8, type: 'spring', stiffness: 200 }}
@@ -44,11 +44,11 @@ export default function WinnerPodium({ winner }: WinnerPodiumProps) {
 
       {/* Podium */}
       <motion.div
-        className="bg-yellow-400 rounded-t-lg px-12 py-4 mt-2 shadow-lg"
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ delay: 1.5, duration: 0.3 }}
-        style={{ transformOrigin: 'bottom' }}
+        className="bg-yellow-400 px-14 py-4 mt-4 shadow-lg"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 0.4 }}
+        style={{ borderRadius: '8px 8px 0 0' }}
       >
         <span className="text-2xl font-bold text-yellow-900">#1</span>
       </motion.div>
