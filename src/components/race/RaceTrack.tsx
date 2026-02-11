@@ -36,9 +36,13 @@ export default function RaceTrack() {
               borderBottom: '1px solid rgba(255,255,255,0.1)',
             }}
           >
-            {/* Lane number */}
-            <div className="absolute left-1 text-white/40 text-xs font-mono w-6 text-center z-10">
-              {i + 1}
+            {/* Duck name label */}
+            <div
+              className="absolute left-1 text-white/70 text-xs font-semibold z-10 truncate"
+              style={{ maxWidth: '120px', top: '2px' }}
+              title={duck.name}
+            >
+              {duck.name}
             </div>
 
             {/* Duck */}
