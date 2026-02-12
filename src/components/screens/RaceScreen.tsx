@@ -35,7 +35,7 @@ export default function RaceScreen() {
   }, [isCountingDown, countdownValue, setIsCountingDown, setCountdownValue, startRace])
 
   return (
-    <div className="min-h-screen flex flex-col p-4">
+    <div className="h-screen flex flex-col p-4 overflow-hidden">
       {/* Header */}
       <div className="flex justify-between items-center mb-4 px-4">
         <h2 className="text-2xl font-bold text-white">Duck Race!</h2>
@@ -53,7 +53,7 @@ export default function RaceScreen() {
       </div>
 
       {/* Race Track */}
-      <div className="flex-1 rounded-2xl overflow-hidden shadow-2xl">
+      <div className="flex-1 min-h-0 rounded-2xl overflow-hidden shadow-2xl">
         <RaceTrack />
       </div>
 

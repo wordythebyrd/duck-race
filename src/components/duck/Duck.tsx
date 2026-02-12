@@ -7,15 +7,13 @@ interface DuckProps {
   size?: number
 }
 
-export default function Duck({ duck, size = 40 }: DuckProps) {
-  const scale = size / 40
-
+export default function Duck({ duck, size = 48 }: DuckProps) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 40 40"
-      style={{ transform: `scale(${scale > 1 ? 1 : 1})`, overflow: 'visible' }}
+      viewBox="-10 -4 55 44"
+      style={{ overflow: 'visible' }}
     >
       {duck.hasCape && <Cape />}
       <DuckBody color={duck.color} />
